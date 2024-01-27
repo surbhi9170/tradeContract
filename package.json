@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "ethers": "^5.4.0"
+  },
+  "name": "tradecontract",
+  "description": "simple trade contract between two parties, a buyer and a seller",
+  "version": "1.0.0",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
