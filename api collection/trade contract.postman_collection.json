@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "37f75853-bdd8-4746-8020-5c32f0803c0c",
+		"name": "ZAPIT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17843574"
+	},
+	"item": [
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "83851830c089ac5d0ad2d00f6222f4c8b9800522a9df44d37a0a366bcc29bd47",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"tokenAmount\":1, \n    \"tokenContract\":\"0x44FfAb2a89c99C6A58433c3d9d2Ff596Bb6D76bc\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/createOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register buyer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f17393a6ba0a9711b2f7511eb21dd493f3e22330d7cd413ddcbf50211d26844c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"orderId\":1, \n    \"message\":\"12\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/registerBuyer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registerBuyer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "f17393a6ba0a9711b2f7511eb21dd493f3e22330d7cd413ddcbf50211d26844c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"orderId\":3, \n    \"message\":12 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/completeOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"completeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "83851830c089ac5d0ad2d00f6222f4c8b9800522a9df44d37a0a366bcc29bd47",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"orderId\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/viewOrderDetails/:orderId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"viewOrderDetails",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
