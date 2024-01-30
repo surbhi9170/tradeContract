@@ -2,10 +2,10 @@
 simple trade contract between two parties, a buyer and a seller
 
 # API FUNCTIONALITIES:
-create order 
-register buyer 
-complete order
-view order details
+1 create order
+2 register buyer 
+3 complete order
+4 view order details
 
 NOTE:
 Add the pvt key of the buyer and seller in the bearer token.
