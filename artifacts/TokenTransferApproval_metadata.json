@@ -1,0 +1,140 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approveAndTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					}
+				],
+				"name": "setSpender",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "spender",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"test2.sol": "TokenTransferApproval"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x32fc81940e398095a082754088b43bcd70dda770a819586abc34fe8b387a42b4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59e2c83e48dbd6c4576400811d11eccbbe8dd44d652fdbaabab22b6fa1188bba",
+				"dweb:/ipfs/QmZkWkDCQGwJH44EN61jov9MY34qg15WYtAvJYvkSJusx4"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+			"keccak256": "0xfd0659db058dc4bbbe45130dcaf1a141f720b45b7423f217b3cec1ed165c61a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3bc6e64ef28014d8d89b20ad2ce1fd6c90adc11f70460f464b55e508331b376e",
+				"dweb:/ipfs/QmbGpR8gvW4VhPrfyfmj84g77zufGszaBQsDqxfCVu6LAi"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x77ac5c86845c8e2cf952ecc293a854c02a41d546ae38d1fb9048bf45a2b852f7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c39a3f67ba3359bcffad116a3d195ac8abcb6295300715c59b3634e954925ed",
+				"dweb:/ipfs/QmSY4qVDm5Rrdyk8ucJyQU88iKYGunNFweETGmmTF5nzQr"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x938edcd4a5bf9243b046fab62dd3860de2d67fd4955a4137affed47a084b6e37",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f0c206a6d444be1988852660bbf2f87a80c884ef3bef7ea300d1e2075b47e4b8",
+				"dweb:/ipfs/QmZ89P6Gs6AxZ52cVzmNUUUh2RUQvjJ5MWVmFMunNemkwC"
+			]
+		},
+		"test2.sol": {
+			"keccak256": "0xc0d799a1c41ba1b19b99c9bb6f5aa83f258396dab6c04c915c531e36c9e32453",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://780b9c9a72911caa0da2cb15b480ce03492146677d744575f4da6e7740fe7560",
+				"dweb:/ipfs/QmYAXMatygv9xiAAx5ceuSpwchVjVPAEmXnSX36sQT2oh9"
+			]
+		}
+	},
+	"version": 1
+}

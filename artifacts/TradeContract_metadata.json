@@ -212,11 +212,6 @@
 						"internalType": "uint256",
 						"name": "chosenRandomNumber",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "buyer",
-						"type": "address"
 					}
 				],
 				"name": "completeOrder",
@@ -251,8 +246,34 @@
 					}
 				],
 				"name": "getOrderDetails",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "orderid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "enum TradeContract.OrderState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -441,11 +462,11 @@
 			]
 		},
 		"TradeContract.sol": {
-			"keccak256": "0x878e9d8edc857aada0aa98b4ecc1ec759d594e32ca12d9cf8d4e8d4cef9e6f5c",
+			"keccak256": "0x1a737157ef403022c6a11ec7a4e6d4e9a16cb3718a44f8be0154d00e52eded82",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0ad4e0e231e6d3a8c2bdb864ce2e4ad43b944e1673d5f26d95a756ce9995a262",
-				"dweb:/ipfs/QmUXYuLuYo44XzmRxsKHefsTyvwwQ1kagHXC1gLjB92rsQ"
+				"bzz-raw://6ab1967de145bd50ff28486c4ec44509992ea7de9fd32f525aca029cddda07cd",
+				"dweb:/ipfs/QmdAnGm3ESGqy9VHjT1bkMCA4EXgabLwUhAx22dakwRi6q"
 			]
 		}
 	},

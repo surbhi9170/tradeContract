@@ -39,4 +39,5 @@ contract CustomUSDT is ERC20 {
     function burn(address account, uint256 amount) external onlyOwner {
         _burn(account, amount);
     }
+
 }

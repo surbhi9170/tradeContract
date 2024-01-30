@@ -69,19 +69,17 @@ contract TradeContract is Ownable {
         orders[orderId].usedRandomNumbers[hash] = true;
     }
 
-    function completeOrder(uint256 orderId, uint256 chosenRandomNumber,address buyer) external onlyBuyer(orderId) {
+    function completeOrder(uint256 orderId, uint256 chosenRandomNumber) external onlyBuyer(orderId) {
         require(orders[orderId].state == OrderState.CREATED, "Order is not in CREATED state");
 
-        bytes32 hash = keccak256(abi.encodePacked(orderId, buyer, chosenRandomNumber));
+        bytes32 hash = keccak256(abi.encodePacked(orderId, msg.sender, chosenRandomNumber));
         require(orders[orderId].usedRandomNumbers[hash], "Invalid random number");
 
-        orders[orderId].state = OrderState.COMPLETED;
-
         IERC20 _token = IERC20(orders[orderId].tokenContract);
-        _token.transfer(buyer, orders[orderId].tokenAmount);
+        require(_token.balanceOf(address(this)) >= orders[orderId].tokenAmount, "Token doesn't exist in the system Please contact the seller ");
+        _token.transfer(msg.sender,orders[orderId].tokenAmount);
 
-        // IERC20 token = IERC20(orders[orderId].tokenContract);
-        // token.transfer(msg.sender, orders[orderId].tokenAmount);
+        orders[orderId].state = OrderState.COMPLETED;
 
         emit OrderCompleted(msg.sender, orders[orderId].tokenAmount, orders[orderId].tokenContract);
     }
@@ -94,10 +92,12 @@ contract TradeContract is Ownable {
         emit OrderCancelled(orderId);
     }
 
-    function getOrderDetails(uint256 orderId) external  {
+    function getOrderDetails(uint256 orderId) external view returns(uint256 orderid, address seller, uint256 tokenAmount, address tokenContract,OrderState state) {
 
         require(orderId <= nextOrderId, "Invalid order ID");
 
-        emit OrderDetails(orders[orderId].orderId,orders[orderId].seller,orders[orderId].tokenAmount,orders[orderId].tokenContract,orders[orderId].state);
+        // emit OrderDetails(orders[orderId].orderId,orders[orderId].seller,orders[orderId].tokenAmount,orders[orderId].tokenContract,orders[orderId].state);
+
+        return (orders[orderId].orderId,orders[orderId].seller,orders[orderId].tokenAmount,orders[orderId].tokenContract,orders[orderId].state);
     }
 }
